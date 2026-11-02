@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile - Job Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="showProfile()">
+
+<header>
+    <h1>💼 Job Portal</h1>
+
+    <nav>
+        <a href="contact.html">Contact</a>
+        <a href="logout.php">Logout</a>
+    </nav>
+</header>
+
+<section class="profile-section">
+
+    <h2>👤 My Profile</h2>
+    <p class="profile-subtitle">
+        Manage your personal information and job portal activity.
+    </p>
+
+    <div class="profile-card">
+
+        <div class="profile-icon">
+            👤
+        </div>
+
+        <h2 id="profileName">Job Seeker</h2>
+        <p id="profileEmail">Email not available</p>
+
+        <div class="profile-details">
+
+            <div class="profile-item">
+                <span>📧</span>
+                <div>
+                    <small>Email</small>
+                    <p id="emailDetails">Not available</p>
+                </div>
+            </div>
+
+            <div class="profile-item">
+                <span>📱</span>
+                <div>
+                    <small>Phone</small>
+                    <p id="phoneDetails">Not available</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="profile-stats">
+
+            <div>
+                <h3>📄</h3>
+                <strong>My Applications</strong>
+                <p>Track your applications</p>
+            </div>
+
+            <div>
+                <h3>⭐</h3>
+                <strong>Saved Jobs</strong>
+                <p>Jobs you liked</p>
+            </div>
+
+            <div>
+                <h3>💼</h3>
+                <strong>Career</strong>
+                <p>Find your dream job</p>
+            </div>
+
+        </div>
+
+        <div class="profile-buttons">
+            <button onclick="window.location.href='myapplications.html'">
+                📋 My Applications
+            </button>
+
+            <button onclick="window.location.href='jobs.html'">
+                🔍 Browse Jobs
+            </button>
+            <button onclick="enableJobAlerts()">
+    🔔 Job Alerts
+</button>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Job Portal | All Rights Reserved</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

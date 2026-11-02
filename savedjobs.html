@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Jobs - Job Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>💼 Job Portal System</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="notifications.html">Notifications</a>
+    </nav>
+</header>
+
+<section class="saved-jobs-section">
+
+    <h2>⭐ Saved Jobs</h2>
+    <p>Jobs you have saved for later.</p>
+    <p id="savedJobCount"></p>
+
+    <div id="savedJobsList" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;"></div>
+
+</section>
+
+<script src="js/script.js"></script>
+<script>
+function unsaveJob(jobId) {
+
+    fetch("unsave_job.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "job_id=" + encodeURIComponent(jobId)
+    })
+    .then(response => response.text())
+    .then(result => {
+
+        alert(result);
+
+        if (result.includes("successfully")) {
+            loadSavedJobs();
+        }
+
+    })
+    .catch(error => {
+
+        console.log("Unsave error:", error);
+        alert("Unable to remove saved job.");
+
+    });
+}
+function loadSavedJobs() {
+
+    fetch("get_saved_jobs.php")
+        .then(response => response.json())
+        .then(jobs => {
+
+            const container = document.getElementById("savedJobsList");
+            const count = document.getElementById("savedJobCount");
+
+            container.innerHTML = "";
+
+            count.innerText = "⭐ Total Saved Jobs: " + jobs.length;
+
+            if (jobs.length === 0) {
+
+                container.innerHTML =
+                    "<p>📭 No saved jobs found.</p>";
+
+                return;
+            }
+
+            jobs.forEach(job => {
+
+                const card = document.createElement("div");
+
+                card.className = "job-card";
+
+                card.innerHTML = `
+                    <h3>💼 ${job.title}</h3>
+
+                    <p><b>🏢 Company:</b> ${job.company}</p>
+
+                    <p><b>📍 Location:</b> ${job.location}</p>
+
+                    <p><b>💰 Salary:</b> ${job.salary}</p>
+
+                    <p><b>🎓 Experience:</b> ${job.experience}</p>
+
+                    <button onclick="applyJob('${job.title}')">
+                        🚀 Apply Now
+                    </button>
+
+                    <button onclick="unsaveJob(${job.job_id})">
+    🗑️ Unsave
+</button>
+                `;
+
+                container.appendChild(card);
+
+            });
+
+        })
+        .catch(error => {
+
+            console.log("Saved Jobs Error:", error);
+
+            document.getElementById("savedJobsList").innerHTML =
+                "<p>❌ Unable to load saved jobs.</p>";
+
+        });
+}
+
+loadSavedJobs();
+
+</script>
+<footer>
+    <p>© 2026 Job Portal | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>s

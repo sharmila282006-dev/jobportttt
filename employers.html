@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employers - Job Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background-image: url("images/jobs-bg.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .employers-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+        }
+
+        .employers-title {
+            text-align: center;
+            color: #2874a6;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .employers-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .employers-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .employer-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .employer-icon {
+            font-size: 45px;
+        }
+
+        .employer-card h3 {
+            color: #2874a6;
+            margin: 12px 0;
+        }
+
+        .employer-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .employer-card button {
+            margin-top: 10px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #2874a6;
+            color: white;
+            cursor: pointer;
+        }
+
+        .employer-card button:hover {
+            opacity: 0.85;
+        }
+
+        @media (max-width: 768px) {
+            .employers-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>💼 Job Portal</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="myapplications.php">My Applications</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="employers-section">
+
+        <h2 class="employers-title">🏢 Top Employers</h2>
+
+        <p class="employers-subtitle">
+            Explore companies and discover exciting career opportunities.
+        </p>
+
+        <div class="employers-container">
+
+            <div class="employer-card">
+                <div class="employer-icon">💻</div>
+                <h3>Tech Solutions</h3>
+                <p>
+                    A technology company offering opportunities in
+                    software development and IT services.
+                </p>
+                <button onclick="window.location.href='jobs.html'">
+                    View Jobs
+                </button>
+            </div>
+
+            <div class="employer-card">
+                <div class="employer-icon">🚀</div>
+                <h3>Innovate Labs</h3>
+                <p>
+                    A growing company focused on innovation, technology
+                    and modern digital solutions.
+                </p>
+                <button onclick="window.location.href='jobs.html'">
+                    View Jobs
+                </button>
+            </div>
+
+            <div class="employer-card">
+                <div class="employer-icon">🌐</div>
+                <h3>Global Systems</h3>
+                <p>
+                    A professional organization providing technology
+                    and business career opportunities.
+                </p>
+                <button onclick="window.location.href='jobs.html'">
+                    View Jobs
+                </button>
+            </div>
+
+            <div class="employer-card">
+                <div class="employer-icon">📊</div>
+                <h3>Smart Business</h3>
+                <p>
+                    A business-focused company offering roles in
+                    management, analytics and technology.
+                </p>
+                <button onclick="window.location.href='jobs.html'">
+                    View Jobs
+                </button>
+            </div>
+
+            <div class="employer-card">
+                <div class="employer-icon">🏆</div>
+                <h3>Career Hub</h3>
+                <p>
+                    Connect with professional opportunities and build
+                    your career with the right organization.
+                </p>
+                <button onclick="window.location.href='jobs.html'">
+                    View Jobs
+                </button>
+            </div>
+
+            <div class="employer-card">
+                <div class="employer-icon">🔧</div>
+                <h3>Future Works</h3>
+                <p>
+                    Discover modern career opportunities and develop
+                    your skills in a professional environment.
+                </p>
+                <button onclick="window.location.href='jobs.html'">
+                    View Jobs
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Job Portal | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

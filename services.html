@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services - Job Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background-image: url("images/jobs-bg.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .services-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+        }
+
+        .services-title {
+            text-align: center;
+            color: #2874a6;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .services-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.94);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card h3 {
+            color: #2874a6;
+            margin: 12px 0;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .service-icon {
+            font-size: 42px;
+        }
+
+        @media (max-width: 768px) {
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>💼 Job Portal</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="myapplications.html">My Applications</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="services-section">
+
+        <h2 class="services-title">⚙️ Our Services</h2>
+
+        <p class="services-subtitle">
+            Explore the services that make your job search easier and faster.
+        </p>
+
+        <div class="services-container">
+
+            <div class="service-card">
+                <div class="service-icon">🔎</div>
+                <h3>Job Search</h3>
+                <p>
+                    Search and explore job opportunities based on your
+                    interests, skills and career goals.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3>Easy Application</h3>
+                <p>
+                    Apply for your favourite jobs through a simple and
+                    convenient application process.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">👤</div>
+                <h3>Profile Management</h3>
+                <p>
+                    Manage your personal information and keep your job
+                    seeker profile updated.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⭐</div>
+                <h3>Save Jobs</h3>
+                <p>
+                    Keep track of interesting job opportunities and
+                    access them easily whenever you need.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Application Tracking</h3>
+                <p>
+                    View and track the jobs you have applied for through
+                    the My Applications page.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>Career Opportunities</h3>
+                <p>
+                    Discover suitable career opportunities and take the
+                    next step towards your dream job.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Job Portal | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

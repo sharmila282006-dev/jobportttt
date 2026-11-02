@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume - Job Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background-image: url("images/jobs-bg.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .resume-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+        }
+
+        .resume-title {
+            text-align: center;
+            color: #2874a6;
+            font-size: 36px;
+        }
+
+        .resume-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .resume-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .resume-card h3 {
+            color: #2874a6;
+            border-bottom: 2px solid #2874a6;
+            padding-bottom: 8px;
+            margin-top: 25px;
+        }
+
+        .resume-card input,
+        .resume-card textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .resume-card textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .resume-buttons {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .resume-buttons button {
+            padding: 12px 25px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            background: #2874a6;
+            color: white;
+            cursor: pointer;
+        }
+
+        .resume-buttons button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+
+<body onload="loadResume()">
+
+    <header>
+        <h1>💼 Job Portal</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="myapplications.html">My Applications</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="resume-section">
+
+        <h2 class="resume-title">📄 Resume Builder</h2>
+
+        <p class="resume-subtitle">
+            Create your professional resume for your job applications.
+        </p>
+
+        <div class="resume-card">
+
+            <h3>👤 Personal Information</h3>
+
+            <input type="text" id="resumeName" placeholder="Full Name">
+<input type="email" id="resumeEmail" placeholder="Email Address">
+<input type="tel" id="resumePhone" placeholder="Phone Number">
+
+<h3>🎓 Education</h3>
+
+<input type="text" id="resumeDegree" placeholder="Degree / Course">
+<input type="text" id="resumeCollege" placeholder="College / Institution">
+<input type="text" id="resumeYear" placeholder="Year of Passing">
+
+<h3>💻 Skills</h3>
+
+<textarea id="resumeSkills" placeholder="Enter your skills"></textarea>
+
+<h3>💼 Experience</h3>
+
+<textarea id="resumeExperience" placeholder="Enter your work experience"></textarea>
+
+<h3>📝 Career Objective</h3>
+
+<textarea id="resumeObjective" placeholder="Write your career objective"></textarea>
+
+            <div class="resume-buttons">
+                <button onclick="saveResume()">
+    💾 Save Resume
+</button>
+
+                <button onclick="window.print()">
+                    🖨️ Print Resume
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Job Portal | All Rights Reserved</p>
+    </footer>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

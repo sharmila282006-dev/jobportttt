@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - Job Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="showAdminDashboard(); showAdminJobs()">
+
+<header>
+    <h1>💼 Job Portal System</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="myapplications.html">My Applications</a>
+        <a href="admin.html">Admin</a>
+       <button onclick="logout()">🚪 Logout</button>
+    </nav>
+</header>
+
+<section class="admin-section">
+
+    <h2>📊 Admin Dashboard</h2>
+
+    <p>Manage and monitor the Job Portal System.</p>
+
+    <div class="admin-cards">
+
+        <div class="admin-card">
+            <h3>💼</h3>
+            <h2 id="totalJobs">0</h2>
+            <p>Total Jobs</p>
+        </div>
+
+        <div class="admin-card">
+            <h3>📋</h3>
+            <h2 id="totalApplications">0</h2>
+            <p>Total Applications</p>
+        </div>
+
+        <div class="admin-card">
+            <h3>⭐</h3>
+            <h2 id="totalSavedJobs">0</h2>
+            <p>Saved Jobs</p>
+        </div>
+
+        <div class="admin-card">
+            <h3>🔔</h3>
+            <h2 id="notificationStatus">0</h2>
+            <p>Notifications</p>
+        </div>
+
+        <div class="admin-card">
+    <h3>🔔</h3>
+    <h2 id="jobAlertStatus">0</h2>
+    <p>Job Alerts</p>
+</div>
+
+    </div>
+<div class="recent-applications">
+
+    <h2>📋 Recent Application</h2>
+
+    <p id="adminApplication">
+        No applications available.
+    </p>
+
+<button onclick="viewAdminApplication()">
+    👀 View Full Application
+</button>
+<button onclick="changeAdminStatus()">
+    📌 Change Status
+</button>
+
+<button onclick="clearAdminApplication()">
+    🧹 Clear Application
+</button>
+
+</div>
+<div class="manage-jobs">
+
+    <h2>💼 Manage Jobs</h2>
+
+    <button onclick="showAddJobForm()">
+        ➕ Add New Job
+    </button>
+
+    <div id="addJobForm"></div>
+<div id="adminJobList"></div>
+</div>
+
+</section>
+
+<script src="js/script.js?v=5"></script>
+
+<footer>
+    <p>© 2026 Job Portal | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

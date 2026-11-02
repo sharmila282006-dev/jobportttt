@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications - Job Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="loadNotifications()">
+
+    <!-- Header -->
+    <header>
+        <h1>💼 Job Portal</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="notifications.html">Notifications</a>
+        </nav>
+    </header>
+
+    <!-- Notifications Section -->
+    <section class="notifications-section">
+        <p id="savedNotification"></p>
+
+<h2>🔔 Notifications</h2>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Job Portal. All Rights Reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+<script>
+
+function loadNotifications() {
+
+    fetch("get_notifications.php")
+        .then(response => response.json())
+        .then(notifications => {
+
+            const section =
+                document.querySelector(".notifications-section");
+
+            const oldCards =
+                section.querySelectorAll(".notification-card");
+
+            oldCards.forEach(card => card.remove());
+
+            if (notifications.length === 0) {
+
+                const message = document.createElement("p");
+
+                message.innerText =
+                    "📭 No notifications available.";
+
+                section.appendChild(message);
+
+                return;
+            }
+
+            notifications.forEach(notification => {
+
+                const card = document.createElement("div");
+
+                card.className = "notification-card";
+
+                card.innerHTML = `
+                    <h3>🔔 Notification</h3>
+                    <p>${notification.message}</p>
+                    <small>${notification.created_at}</small>
+                `;
+
+                section.appendChild(card);
+
+            });
+
+        })
+        .catch(error => {
+
+            console.log("Notification Error:", error);
+
+        });
+}
+
+</script>
+</body>
+</html>
